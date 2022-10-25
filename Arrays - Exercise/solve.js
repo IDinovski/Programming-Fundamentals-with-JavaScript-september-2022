@@ -1,21 +1,24 @@
 function solve(arr) {
+  let leftSum = 0;
+  let rightSum = 0;
   let flag = true;
-  let result = [];
   for (let i = 0; i < arr.length; i++) {
-    for (let k = i + 1; k < arr.length; k++) {
-      if (arr[i] > arr[k]) {
-        flag = true;
-      } else {
-        flag = false;
-        break;
-      }
+    let currentNumber = arr[i];
+    for (let l = i - 1; l >= 0; l--) {
+      leftSum += arr[l];
     }
-    if (flag) {
-      result.push(arr[i]);
+    for (let r = i + 1; r < arr.length; r++) {
+      rightSum += arr[r];
     }
-    flag = false;
+    if (leftSum == rightSum) {
+      console.log(i);
+      flag = false;
+    }
+    leftSum = 0;
+    rightSum = 0;
   }
-  result.push(arr[arr.length-1])
-  console.log(result.join(" "));
+  if (flag) {
+    console.log("no");
+  }
 }
-solve([1, 4, 5, 3, 2]);
+solve([1]);
