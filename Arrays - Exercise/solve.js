@@ -1,11 +1,8 @@
-function solve(arr1, arr2) {
-  for(let i = 0;i<arr1.length;i++){
-    if(arr2.includes(arr1[i])){
-      console.log(arr1[i]);
-    }
+function solve(arr, rotations) {
+  for (let i = 0; i < rotations; i++) {
+    let char = arr.shift();
+    arr.push(char);
   }
+  console.log(arr.join(" "));
 }
-solve(
-  ["Hey", "hello", 2, 4, "Peter", "e"],
-  ["Petar", 10, "hey", 4, "hello", "2"]
-);
+solve([51, 47, 32, 61, 21], 2);
