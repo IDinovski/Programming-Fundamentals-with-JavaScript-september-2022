@@ -1,21 +1,11 @@
-function solve(arr) {
-  let originalSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    originalSum += arr[i];
-  }
-
-  let modifiedSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let currentNumber = arr[i];
-    if (currentNumber % 2 == 0) {
-      arr[i] += i;
-    } else {
-      arr[i] -= i;
+function solve(arr1, arr2) {
+  for(let i = 0;i<arr1.length;i++){
+    if(arr2.includes(arr1[i])){
+      console.log(arr1[i]);
     }
-    modifiedSum += arr[i];
   }
-  console.log(arr);
-  console.log(originalSum);
-  console.log(modifiedSum);
 }
-solve([5, 15, 23, 56, 35]);
+solve(
+  ["Hey", "hello", 2, 4, "Peter", "e"],
+  ["Petar", 10, "hey", 4, "hello", "2"]
+);
