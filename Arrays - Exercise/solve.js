@@ -1,26 +1,21 @@
 function solve(arr) {
-  let stringArr = String(arr);
-  let newArr = [];
-  let currentElement = "";
-  let currentIndex = 0;
-
-  for (let i = 0; i < stringArr.length; i++) {
-    if (i == stringArr.length - 1) {
-      for (let k = currentIndex; k <= i; k++) {
-        currentElement += stringArr[k];
-      }
-      newArr.push(currentElement);
-      currentElement = "";
-      currentIndex = i + 1;
-    } else if (stringArr[i] == ` ` || stringArr[i] === `|`) {
-      for (let k = currentIndex; k < i; k++) {
-        currentElement += stringArr[k];
-      }
-      newArr.push(currentElement);
-      currentElement = "";
-      currentIndex = i + 1;
-    }
+  let originalSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    originalSum += arr[i];
   }
-  console.log(newArr);
+
+  let modifiedSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let currentNumber = arr[i];
+    if (currentNumber % 2 == 0) {
+      arr[i] += i;
+    } else {
+      arr[i] -= i;
+    }
+    modifiedSum += arr[i];
+  }
+  console.log(arr);
+  console.log(originalSum);
+  console.log(modifiedSum);
 }
-solve(["cat 10|potion 30|orc 10|chest 10|snake 25|chest 110"]);
+solve([5, 15, 23, 56, 35]);
