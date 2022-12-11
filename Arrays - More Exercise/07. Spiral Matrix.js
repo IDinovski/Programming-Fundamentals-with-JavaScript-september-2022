@@ -1,20 +1,17 @@
 function solve(num1, num2) {
   let max = num1 * num2;
   let result = [];
-  let top = 1;
-  let right = 1;
-  let botton = 1;
-  let left = 1;
-
+let nextNum = Number()
   for (let i = 1; i <= max; i++) {
-    if(top<=5){
-        result.push[i]
-        top++
-    }else if()
-    if (result.length >= 5) {
-      console.log(result.join(" "));
-      result=[]
+    result.push(i);
+    if (result.length >= num1) {
+      console.log(result);
+      result = [];
     }
   }
+  let end = ""
+  while(end != end){
+    
+  }
 }
-solve(5, 5);
+solve(3, 3);

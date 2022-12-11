@@ -1,11 +1,16 @@
 function solve(input) {
-  let initialIndex = input[1];
-  let initialIndexArray = [];
-  for (let q = 0; q < initialIndex.length; q++) {
-    if (initialIndex[q] != ` `) {
-      initialIndexArray.push(initialIndex[q]);
-    }
+  let fieldLength = input.shift();
+  let initialIndex = input.shift().split(" ");
+  let firstBug = initialIndex[0];
+  let secondBug = initialIndex[1];
+
+  for (let i = 0; i < input.length; i++) {
+    let comands = input[i].split(" ")
+    let ladyBugIndex = comands[0]
+    let direction = comands[1]
+    let flyLength = comands[2]
+    
+    console.log(ladyBugIndex);
   }
-  console.log(initialIndexArray);
 }
 solve([3, "0 1", "0 right 1", "2 right 1"]);
