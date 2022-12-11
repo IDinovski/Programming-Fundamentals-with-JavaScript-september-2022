@@ -6,4 +6,4 @@ function solve(firstName, lastName, age) {
   };
   return person;
 }
-solve("Peter", "Pan", "20");
+console.table(solve("Peter", "Pan", "20"));
