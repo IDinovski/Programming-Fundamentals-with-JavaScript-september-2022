@@ -1,7 +1,5 @@
 function solve(input) {
   let listObject = {};
-
-  let phones = [];
   for (let name of input) {
     listObject.name = name;
     listObject.number = name.length;
